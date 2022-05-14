@@ -1,3 +1,4 @@
+
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox
@@ -7,7 +8,7 @@ from tkinter.ttk import Combobox
 from tkinter import ttk
 
 
-def account():
+def Regular():
     
         global Canvas1
         Canvas1 = tk.Canvas( background="#B0B0B0", relief="ridge")
@@ -174,35 +175,464 @@ def account():
         Label13 = Label(Canvas2,text='Financial year beginning from',borderwidth="0", width=8, background="white",
                                             foreground="black",
                                             font="-family {Segoe UI} -size 12  ")
-        Label13.place(x=550, rely=0.15, relheight=0.06, relwidth=0.210)
+        Label13.place(x=600, rely=0.15, relheight=0.06, relwidth=0.210)
         Label14 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
                                             foreground="black",
                                             font="-family {Segoe UI} -size 12  ")
-        Label14.place(relx=0.755, rely=0.15, relheight=0.06, relwidth=0.02)
+        Label14.place(relx=0.720, rely=0.15, relheight=0.06, relwidth=0.02)
         Entry2 = Entry(Canvas2,width=60,borderwidth="3")
-        Entry2.place(x=790, rely=0.16, relheight=0.04, relwidth=0.200)
+        Entry2.place(x=850, rely=0.16, relheight=0.04, relwidth=0.200)
         Label13 = Label(Canvas2,text='Books beginning from',borderwidth="0", width=8, background="white",
                                             foreground="black",
                                             font="-family {Segoe UI} -size 12  ")
-        Label13.place(x=545, rely=0.20, relheight=0.06, relwidth=0.170)
+        Label13.place(x=600, rely=0.20, relheight=0.06, relwidth=0.170)
         Label14 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
                                             foreground="black",
                                             font="-family {Segoe UI} -size 12  ")
-        Label14.place(relx=0.740, rely=0.20, relheight=0.06, relwidth=0.05)
+        Label14.place(relx=0.705, rely=0.20, relheight=0.06, relwidth=0.05)
         Entry2 = Entry(Canvas2,width=60,borderwidth="3")
-        Entry2.place(x=790, rely=0.21, relheight=0.04, relwidth=0.200)
+        Entry2.place(x=850, rely=0.21, relheight=0.04, relwidth=0.200)
         # Create a Button
         btn = Button(Canvas2, text = 'Save', bd = '2',background="green",
                         font="-family {Segoe UI} -size 12  ",foreground="white")
         btn.place(x=500, rely=0.90, relheight=0.06, relwidth=0.08)
+        
 
        
         global Canvas3
         Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
         Canvas3.place(relx=0.850, rely=0.07, relheight=0.82, relwidth=0.150)
+        Label14 = Label(Canvas3,text='F2:Period',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=5, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=5, height=30, width=20)
+        Label14 = Label(Canvas3,text='F3:Company',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=40, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=40, height=30, width=20)
+        Label14 = Label(Canvas3,text='F4:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=100, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=100, height=30, width=20)
+        Label14 = Label(Canvas3,text='F5:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=135, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=135, height=30, width=20)
+        Label14 = Label(Canvas3,text='F6:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=170, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=170, height=30, width=20)
+        Label14 = Label(Canvas3,text='F7:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=205, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=205, height=30, width=20)
+        Label14 = Label(Canvas3,text='F8:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=240, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=240, height=30, width=20)
+        Label14 = Label(Canvas3,text='F9:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=275, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=275, height=30, width=20)
+        Label14 = Label(Canvas3,text='F10:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=310, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=310, height=30, width=20)
+        # Create a Button
+        btn = Button(Canvas3, text = 'R: Group Company', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 12  ",foreground="black", command=GroupCompany)
+        btn.place(x=5, y=380, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=380, height=30, width=20)
 
+
+
+
+
+
+def GroupCompany():
     
+        global Canvas1
+        Canvas1 = tk.Canvas( background="#B0B0B0", relief="ridge")
+        Canvas1.place(relx=0, rely=0.07, relheight=0.820, relwidth=.850)
+        Label5 = Label(Canvas1,text='Group Company Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.999)
 
+
+        global Canvas2
+        Canvas2 = tk.Canvas(Canvas1, background="white",borderwidth="1", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas2.place(relx=0, rely=0.030, relheight=0.900, relwidth=0.600)
+        Label11 = Label(Canvas2,text='Company Data Path',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label11.place(relx=0.02, rely=0.03, relheight=0.06, relwidth=0.200)
+        Label12 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label12.place(relx=0.310, rely=0.03, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.05, relheight=0.04, relwidth=0.500)
+        canvas = Canvas(Canvas2,background="white",bd=0, highlightthickness=0, relief='ridge')
+        canvas.create_line(15, 25, 1800, 25,fill='#D3D3D3',width=2)
+        canvas.place(relx=0, rely=0.08, relheight=0.06, relwidth=0.980)
+        Label13 = Label(Canvas2,text='Company Name',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label13.place(relx=0.03, rely=0.15, relheight=0.06, relwidth=0.150)
+        Label14 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(relx=0.310, rely=0.15, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.16, relheight=0.04, relwidth=0.500)
+        Label15 = Label(Canvas2,text='Mailing Name',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label15.place(x=15, rely=0.23, relheight=0.06, relwidth=0.150)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.23, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.24, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Address',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=15, rely=0.28, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.28, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.29, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='State',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=8, rely=0.42, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.41, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.42, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Country',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=15, rely=0.46, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.45, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.46, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Pincode',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=15, rely=0.50, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.49, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.50, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Telephone',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=22, rely=0.54, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.53, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.54, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Mobile',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=12, rely=0.58, relheight=0.04, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.57, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.58, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Fax',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=8, rely=0.62, relheight=0.04, relwidth=0.080)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.61, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.62, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='E-mail',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=18, rely=0.66, relheight=0.04, relwidth=0.080)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.65, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.66, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Website',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=25, rely=0.70, relheight=0.04, relwidth=0.080)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.69, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.70, relheight=0.04, relwidth=0.500)
+        Label17 = Label(Canvas2,text='Members companies',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=20, rely=0.80, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.310, rely=0.79, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.80, relheight=0.04, relwidth=0.500)
+        # Create a Button
+        btn = Button(Canvas2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=Regular)
+        btn.place(x=300, rely=0.90, relheight=0.06, relwidth=0.08)
+        
+
+       
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.850, rely=0.07, relheight=0.82, relwidth=0.150)
+        Label14 = Label(Canvas3,text='F2:Period',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=5, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=5, height=30, width=20)
+        Label14 = Label(Canvas3,text='F3:Company',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=40, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=40, height=30, width=20)
+        Label14 = Label(Canvas3,text='F4:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=100, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=100, height=30, width=20)
+        Label14 = Label(Canvas3,text='F5:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=135, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=135, height=30, width=20)
+        Label14 = Label(Canvas3,text='F6:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=170, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=170, height=30, width=20)
+        Label14 = Label(Canvas3,text='F7:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=205, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=205, height=30, width=20)
+        Label14 = Label(Canvas3,text='F8:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=240, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=240, height=30, width=20)
+        Label14 = Label(Canvas3,text='F9:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=275, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=275, height=30, width=20)
+        Label14 = Label(Canvas3,text='F10:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=5, y=310, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=310, height=30, width=20)
+        # Create a Button
+        btn = Button(Canvas3, text = 'R: Regular', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 12  ",foreground="black",command=GroupCompany)
+        btn.place(x=5, y=380, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=380, height=30, width=20)
+
+
+
+def SelectRemoteCompany():
+    
+        global Canvas1
+        Canvas1 = tk.Canvas( background="#B0B0B0", relief="ridge")
+        Canvas1.place(relx=0, rely=0.07, relheight=0.820, relwidth=.850)
+        Label5 = Label(Canvas1,text='Tally.NET User Login',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.999)
+
+
+        global Canvas2
+        Canvas2 = tk.Canvas(Canvas1, background="white",borderwidth="1", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas2.place(x=270, rely=0.300, relheight=0.300, relwidth=0.600)
+        Label11 = Label(Canvas2,text='Login as Tally.NET User',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  -weight bold ")
+        Label11.place(x=300, rely=0.03, relheight=0.15, relwidth=0.250)
+        Label17 = Label(Canvas2,text='Tally.Net ID',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=25, rely=0.23, relheight=0.15, relwidth=0.100)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(x=250, rely=0.22, relheight=0.15, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=10,borderwidth="3")
+        Entry2.place(x=280, rely=0.23, relheight=0.15, relwidth=0.600)
+        Label17 = Label(Canvas2,text='Tally.NET password',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=15, rely=0.48, relheight=0.15, relwidth=0.200)
+        Label16 = Label(Canvas2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(x=250, rely=0.46, relheight=0.15, relwidth=0.05)
+        Entry2 = Entry(Canvas2,width=60,borderwidth="3")
+        Entry2.place(x=280, rely=0.48, relheight=0.15, relwidth=0.600)
+        # Create a Button
+        btn = Button(Canvas2, text = 'Login', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white")
+        btn.place(x=350, rely=0.75, relheight=0.18, relwidth=0.08)
+        
+
+       
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.850, rely=0.07, relheight=0.82, relwidth=0.150)
+        
+        # Create a Button
+        btn = Button(Canvas3, text = 'R: Reset Password', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 12  ",foreground="black",command=ResetPassword)
+        btn.place(x=5, y=380, height=30, width=163)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=170, y=380, height=30, width=20)
+
+
+
+def ResetPassword():
+    
+        global Canvas4
+        Canvas4 = tk.Canvas( background="#B0B0B0", relief="ridge")
+        Canvas4.place(relx=0, rely=0.07, relheight=0.820, relwidth=.850)
+        Label5 = Label(Canvas4,text='Reset Password',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.999)
+
+
+        global Canvas5
+        Canvas5 = tk.Canvas(Canvas4, background="white",borderwidth="1", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas5.place(x=270, rely=0.300, relheight=0.300, relwidth=0.600)
+        Label11 = Label(Canvas5,text='Reset Password',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  -weight bold ")
+        Label11.place(x=300, rely=0.03, relheight=0.15, relwidth=0.250)
+        Label17 = Label(Canvas5,text='Tally.Net ID',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label17.place(x=25, rely=0.23, relheight=0.15, relwidth=0.100)
+        Label16 = Label(Canvas5,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(x=250, rely=0.22, relheight=0.15, relwidth=0.05)
+        Entry2 = Entry(Canvas5,width=10,borderwidth="3")
+        Entry2.place(x=280, rely=0.23, relheight=0.15, relwidth=0.600)
+        Label17 = Label(Canvas5,text='You will receive an e-mail with a link to reset password',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Helvetica} -size 12 -slant italic ")
+        Label17.place(x=320, rely=0.40, relheight=0.15, relwidth=0.500)
+        # Create a Button
+        btn = Button(Canvas5, text = 'Login', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white")
+        btn.place(x=350, rely=0.75, relheight=0.18, relwidth=0.08)
+
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.850, rely=0.07, relheight=0.82, relwidth=0.150)
+        
+
+       
+       
 
 
 
@@ -219,7 +649,7 @@ screen.configure(background="#848884")
 screen.configure(cursor="arrow")
           
 sbmibtn=Button(screen,text='K:Company',borderwidth="0",background="#023047",
-                                     foreground="white",width=10,font="-family {Segoe UI} -size 12 -weight bold ",command=account).place(x=20,y=10)
+                                     foreground="white",width=10,font="-family {Segoe UI} -size 12 -weight bold ",command=Regular).place(x=20,y=10)
 sbmibtn=Button(screen,text='Y:Data',borderwidth="0",background="#023047",
                                      foreground="white",width=10,font="-family {Segoe UI} -size 12 -weight bold ").place(x=180,y=10)
 sbmibtn=Button(screen,text='Z:Exchange',borderwidth="0",background="#023047",
@@ -275,14 +705,45 @@ Label10 = Label(Canvas2,text='Period',borderwidth="0", width=8, background="#eff
                                      foreground="black",
                                      font="-family {Segoe UI} -size 12  ")
 Label10.place(relx=0.89, rely=0.03, relheight=0.04, relwidth=0.120)
-# Creating Listbox
-Lb = Listbox(Canvas2, height=6,  background="#e6ffff", font="-family {Segoe UI} -size 12  ",justify='right')
-# Inserting items in Listbox
-Lb.insert(0, 'Create Company')
-Lb.insert(1, 'Select Remote Company')
-Lb.insert(2, 'Specify Path')
-Lb.insert(3, 'Select From Drive')
-Lb.place(relx=0.0, rely=0.07, relheight=0.13, relwidth=0.999)
+btn=Button(Canvas2,text='Create Company',borderwidth="0",background="#e6ffff",
+                                     foreground="black",width=78,font="-family {Segoe UI} -size 12 ",command=Regular)
+btn.place(relx=0, rely=0.10, relheight=0.04, width=780)
+def on_enter(e):
+    btn['background'] = 'yellow'
+def on_leave(e):
+    btn['background'] = '#e6ffff'
+btn.bind("<Enter>", on_enter)
+btn.bind("<Leave>", on_leave)
+btn1=Button(Canvas2,text='Select Remote Company',borderwidth="0",background="#e6ffff",
+                                     foreground="black",width=78,font="-family {Segoe UI} -size 12 ",command=SelectRemoteCompany)
+btn1.place(relx=0, rely=0.15, relheight=0.04, width=780)
+
+def on_enter(e):
+    btn1['background'] = 'yellow'
+def on_leave(e):
+    btn1['background'] = '#e6ffff'
+btn1.bind("<Enter>", on_enter)
+btn1.bind("<Leave>", on_leave)
+btn2=Button(Canvas2,text='Specify Path',borderwidth="0",background="#e6ffff",
+                                     foreground="black",width=78,font="-family {Segoe UI} -size 12 ")
+btn2.place(relx=0, rely=0.20, relheight=0.04, width=780)
+
+def on_enter(e):
+    btn2['background'] = 'yellow'
+def on_leave(e):
+    btn2['background'] = '#e6ffff'
+btn2.bind("<Enter>", on_enter)
+btn2.bind("<Leave>", on_leave)
+btn3=Button(Canvas2,text='Selec from Drive',borderwidth="0",background="#e6ffff",
+                                     foreground="black",width=78,font="-family {Segoe UI} -size 12 ")
+btn3.place(relx=0, rely=0.25, relheight=0.04, width=780)
+
+def on_enter(e):
+    btn3['background'] = 'yellow'
+def on_leave(e):
+    btn3['background'] = '#e6ffff'
+btn3.bind("<Enter>", on_enter)
+btn3.bind("<Leave>", on_leave)
 
 
 global Canvas3
