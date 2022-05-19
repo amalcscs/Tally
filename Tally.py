@@ -844,13 +844,321 @@ def CompanyFeaturesAlteration():
                                             font="-family {Segoe UI} -size 12  ")
         Label14.place(x=130, y=310, height=30, width=20)
         # Create a Button
-        btn = Button(Canvas3, text = 'R: Group Company', bd = '0',background="white",
-                        font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w", command=GroupCompany)
+        btn = Button(Canvas3, text = 'I: More Details', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w", command=MoreDetails)
         btn.place(x=5, y=380, height=30, width=120)
         Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
                                             foreground="black",
                                             font="-family {Segoe UI} -size 12  ")
         Label14.place(x=130, y=380, height=30, width=20)
+
+def MoreDetails():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='Company Features Alteration',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Canvas(Frame1, background="white",bd=0, insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Frame2.place(relx=0.320, rely=0.03, relheight=0.100, relwidth=0.350)
+        Label11 = Label(Frame2,text='More Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold  ")
+        Label11.place(relx=0.27, rely=0.06, relheight=0.25, relwidth=0.50)
+        Entry2 = Entry(Frame2,width=60,borderwidth="3")
+        Entry2.place(relx=0.03, rely=0.45, relheight=0.28, relwidth=0.940)
+
+        global Frame3
+        Frame3 = tk.Canvas(Frame1, background="#e6ffff",bd=0, insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Frame3.place(relx=0.270, rely=0.11, relheight=0.200, relwidth=0.450)
+        Label11 = Label(Frame3,text='  List of Company Details',borderwidth="0", width=8, background="#2a52be",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 11",anchor="w")
+        Label11.place(relx=0, rely=0, relheight=0.12, relwidth=1.000)
+        # Create a Button
+        btn = Button(Frame3, text = 'Show More  ', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10",foreground="black",anchor="e",command=ShowMore)
+        btn.place(relx=0, rely=0.23, relheight=0.12, relwidth=1.000)
+        def on_enter(e):
+            btn['background'] = 'yellow'
+        def on_leave(e):
+            btn['background'] = '#e6ffff'
+        btn.bind("<Enter>", on_enter)
+        btn.bind("<Leave>", on_leave)
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.36, relheight=0, relwidth=0.980)
+        Label11 = Label(Frame3,text='  Statutory Details',borderwidth="0", width=8, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label11.place(relx=0, rely=0.40, relheight=0.12, relwidth=1.000)
+        # Create a Button
+        btn1 = Button(Frame3, text = '      GST Details', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10",foreground="black",anchor="w",command=GSTdetails)
+        btn1.place(relx=0, rely=0.55, relheight=0.12, relwidth=1.000)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        Label11 = Label(Frame3,text='  General Details',borderwidth="0", width=8, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label11.place(relx=0, rely=0.70, relheight=0.10, relwidth=1.000)
+        # Create a Button
+        btn2 = Button(Frame3, text = '      PAN/CIN Details', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w")
+        btn2.place(relx=0, rely=0.85, relheight=0.10, relwidth=1.000)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+        
+
+def ShowMore():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='Company Features Alteration',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Canvas(Frame1, background="white",bd=0, insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Frame2.place(relx=0.320, rely=0.03, relheight=0.100, relwidth=0.350)
+        Label11 = Label(Frame2,text='More Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold  ")
+        Label11.place(relx=0.27, rely=0.06, relheight=0.25, relwidth=0.50)
+        Entry2 = Entry(Frame2,width=60,borderwidth="3")
+        Entry2.place(relx=0.03, rely=0.45, relheight=0.28, relwidth=0.940)
+
+        global Frame3
+        Frame3 = tk.Canvas(Frame1, background="#e6ffff",bd=0, insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Frame3.place(relx=0.270, rely=0.11, relheight=0.300, relwidth=0.450)
+        Label11 = Label(Frame3,text='  List of Company Details',borderwidth="0", width=8, background="#2a52be",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 11",anchor="w")
+        Label11.place(relx=0, rely=0, relheight=0.12, relwidth=1.000)
+        # Create a Button
+        btn = Button(Frame3, text = 'Show Less  ', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10",foreground="black",anchor="e",command=MoreDetails)
+        btn.place(relx=0, rely=0.23, relheight=0.10, relwidth=1.000)
+        def on_enter(e):
+            btn['background'] = 'yellow'
+        def on_leave(e):
+            btn['background'] = '#e6ffff'
+        btn.bind("<Enter>", on_enter)
+        btn.bind("<Leave>", on_leave)
+        # Create a Button
+        btn4 = Button(Frame3, text = 'Show Inactive  ', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10",foreground="black",anchor="e")
+        btn4.place(relx=0, rely=0.31, relheight=0.10, relwidth=1.000)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.40, relheight=0, relwidth=0.980)
+        Label11 = Label(Frame3,text='  Statutory Details',borderwidth="0", width=8, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label11.place(relx=0, rely=0.42, relheight=0.12, relwidth=1.000)
+        # Create a Button
+        btn1 = Button(Frame3, text = '      GST Details', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10",foreground="black",anchor="w",command=GSTdetails)
+        btn1.place(relx=0, rely=0.53, relheight=0.10, relwidth=1.000)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        Label11 = Label(Frame3,text='  General Details',borderwidth="0", width=8, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label11.place(relx=0, rely=0.65, relheight=0.10, relwidth=1.000)
+        # Create a Button
+        btn2 = Button(Frame3, text = '      PAN/CIN Details', bd = '2',background="#e6ffff",borderwidth="0",
+                       font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w")
+        btn2.place(relx=0, rely=0.75, relheight=0.10, relwidth=1.000)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def GSTdetails():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='Company Features Alteration',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="white",bd=0, relief="ridge")
+        Frame2.place(relx=0.10, rely=0.10, relheight=0.750, relwidth=0.800)
+        Label11 = Label(Frame2,text='GST Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11 -weight bold  ")
+        Label11.place(relx=0.25, rely=0, relheight=0.12, relwidth=0.50)
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.45, y=38, relheight=0, relwidth=0.10)
+        Label11 = Label(Frame2,text='GST Registration Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11 -weight bold  ")
+        Label11.place(relx=0, rely=0.10, relheight=0.10, relwidth=0.250)
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.03, y=85, relheight=0, relwidth=0.19)
+        Label11 = Label(Frame2,text='State',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.19, relheight=0.04, relwidth=0.300)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.18, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Registration type',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.24, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.23, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Assessee of Other Territory',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.29, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.28, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='GST Application form',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.34, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.33, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='GSTIN/UIN',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.39, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.38, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Periodicity of GSTR1',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.44, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.43, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Additional Features',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11 -weight bold",anchor="w")
+        Label11.place(relx=0.03, rely=0.50, relheight=0.04, relwidth=0.200)
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.03, rely=0.54, relheight=0, relwidth=0.19)
+        Label11 = Label(Frame2,text='Set/alter GST rate details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.56, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.55, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Enable tax liability on advance receipts',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.61, relheight=0.04, relwidth=0.300)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.60, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Enable tax liability on reverse charge',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.66, relheight=0.04, relwidth=0.300)
+        Label11 = Label(Frame2,text='(Enable tax liability on reverse charge)',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Helvetica} -size 11 -slant italic ",anchor="w")
+        Label11.place(relx=0.03, rely=0.70, relheight=0.04, relwidth=0.300)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.65, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Enable GST Classifications',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.76, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.75, relheight=0.06, relwidth=0.03)
+        Label11 = Label(Frame2,text='Provide LUT/BOND details',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Arial UI} -size 11",anchor="w")
+        Label11.place(relx=0.03, rely=0.81, relheight=0.04, relwidth=0.200)
+        Label16 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label16.place(relx=0.320, rely=0.80, relheight=0.06, relwidth=0.03)
+
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
 
 
 def GroupCompany():
