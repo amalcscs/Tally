@@ -1,4 +1,4 @@
-
+from tkinter.messagebox import showinfo
 from tkinter import *
 import tkinter as tk
 from tkinter import messagebox as mb
@@ -2463,7 +2463,7 @@ def MasterCreation():
                                             font="-family {Segoe UI} -size 12 ",anchor="w")
         Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
         btn1=Button(Frame3,text='Change Company  ',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=ShutCompanyChangeCompany)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterChangeCompany)
         btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
         def on_enter(e):
             btn1['background'] = 'yellow'
@@ -2472,7 +2472,7 @@ def MasterCreation():
         btn1.bind("<Enter>", on_enter)
         btn1.bind("<Leave>", on_leave)
         btn2=Button(Frame3,text='Show More  ',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=ShutCompanyChangeCompany)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowmore)
         btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
         def on_enter(e):
             btn2['background'] = 'yellow'
@@ -2594,6 +2594,981 @@ def MasterCreation():
             btn13['background'] = '#e6ffff'
         btn13.bind("<Enter>", on_enter)
         btn13.bind("<Leave>", on_leave)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def MasterChangeCompany():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Change Company',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.380, rely=0.03, relheight=0.150, relwidth=0.250)
+        Label5 = Label(Frame2,text='Change Company',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.20, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.30, rely=0.33, relwidth=0.400, height=0)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.01, rely=0.45, relheight=0.30, relwidth=0.980)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=420, y=150, relheight=0.700, relwidth=.270)
+        Label5 = Label(Frame3,text='  List of Masters',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
+        btn1=Button(Frame3,text='Create Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=Regular)
+        btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        btn2=Button(Frame3,text='Select Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=SelectCompany)
+        btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn3=Button(Frame3,text='Shut Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=ShutCompany)
+        btn3.place(relx=0, rely=0.14, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        # Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.03, rely=0.18, relwidth=0.950, height=0)
+        # Using treeview widget
+        style = ttk.Style()
+        style.configure(".", font=('Helvetica', 8), foreground="white",bd=0)
+        style.configure("Treeview",background='green',font=('Arial', 9))
+        treev = ttk.Treeview(Frame3, selectmode ='browse')
+        
+        # Calling pack method w.r.to treeview
+        treev.grid(row=10,column=0,padx=0,pady=100)
+        
+        # Defining number of columns
+        treev["columns"] = ("1", "2")
+        
+        # Defining heading
+        # treev['show'] = 'headings'
+        
+        # Assigning the width and anchor to  the
+        # respective columns
+        treev.column("1", width = 10, anchor ='w')
+        treev.column("2", width = 90, anchor ='e')
+        
+        # # Assigning the heading names to the
+        # # respective columns
+        # treev.heading("1", text ="Name")
+        # treev.heading("2", text ="Sex")
+        # treev.heading("3", text ="Age")
+        
+        # Inserting the items and their features to the
+        # columns built
+        treev.insert("", 'end', text ="L1",
+                    values =("Nidhi", "F", "25"))
+        treev.insert("", 'end', text ="L2",
+                    values =("Nisha", "F", "23"))
+        
+          
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def MasterShowmore():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  ',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.380, rely=0.03, relheight=0.150, relwidth=0.250)
+        Label5 = Label(Frame2,text='Master Creation',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.30, rely=0.27, relwidth=0.400, height=0)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.01, rely=0.45, relheight=0.30, relwidth=0.980)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=420, y=150, relheight=0.700, relwidth=.270)
+        Label5 = Label(Frame3,text='  List of Masters',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
+        btn1=Button(Frame3,text='Change Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterChangeCompany)
+        btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterCreation)
+        btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn14=Button(Frame3,text='Show Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowInactive)
+        btn14.place(relx=0, rely=0.14, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn14['background'] = 'yellow'
+        def on_leave(e):
+            btn14['background'] = '#e6ffff'
+        btn14.bind("<Enter>", on_enter)
+        btn14.bind("<Leave>", on_leave)
+        # Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.18, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  Accounting Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.19, relheight=0.04, relwidth=0.999)
+        btn3=Button(Frame3,text='     Group',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn3.place(relx=0, rely=0.23, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     Ledger',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn4.place(relx=0, rely=0.27, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     Currency',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn5.place(relx=0, rely=0.31, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     Voucher Type',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn6.place(relx=0, rely=0.35, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        Label5 = Label(Frame3,text='  Inventory Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.39, relheight=0.04, relwidth=0.999)
+        btn7=Button(Frame3,text='     Stock Group',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn7.place(relx=0, rely=0.43, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        btn8=Button(Frame3,text='     Stock Category',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn8.place(relx=0, rely=0.47, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn8['background'] = 'yellow'
+        def on_leave(e):
+            btn8['background'] = '#e6ffff'
+        btn8.bind("<Enter>", on_enter)
+        btn8.bind("<Leave>", on_leave)
+        btn9=Button(Frame3,text='     Stock Item',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn9.place(relx=0, rely=0.51, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn9['background'] = 'yellow'
+        def on_leave(e):
+            btn9['background'] = '#e6ffff'
+        btn9.bind("<Enter>", on_enter)
+        btn9.bind("<Leave>", on_leave)
+        btn10=Button(Frame3,text='     Unit',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn10.place(relx=0, rely=0.55, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn10['background'] = 'yellow'
+        def on_leave(e):
+            btn10['background'] = '#e6ffff'
+        btn10.bind("<Enter>", on_enter)
+        btn10.bind("<Leave>", on_leave)
+        btn11=Button(Frame3,text='     Location',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn11.place(relx=0, rely=0.59, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn11['background'] = 'yellow'
+        def on_leave(e):
+            btn11['background'] = '#e6ffff'
+        btn11.bind("<Enter>", on_enter)
+        btn11.bind("<Leave>", on_leave)
+        Label5 = Label(Frame3,text='  Statutory Details',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.63, relheight=0.04, relwidth=0.999)
+        btn12=Button(Frame3,text='     GST Details',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn12.place(relx=0, rely=0.67, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn12['background'] = 'yellow'
+        def on_leave(e):
+            btn12['background'] = '#e6ffff'
+        btn12.bind("<Enter>", on_enter)
+        btn12.bind("<Leave>", on_leave)
+        btn13=Button(Frame3,text='     PAN/CIN Details',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn13.place(relx=0, rely=0.71, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn13['background'] = 'yellow'
+        def on_leave(e):
+            btn13['background'] = '#e6ffff'
+        btn13.bind("<Enter>", on_enter)
+        btn13.bind("<Leave>", on_leave)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def MasterShowInactive():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  ',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.380, rely=0.03, relheight=0.150, relwidth=0.250)
+        Label5 = Label(Frame2,text='Master Creation',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.30, rely=0.27, relwidth=0.400, height=0)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.01, rely=0.35, relheight=0.25, relwidth=0.980)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=420, y=135, relheight=0.750, relwidth=.270)
+        Label5 = Label(Frame3,text='  List of Masters',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
+        btn1=Button(Frame3,text='Change Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterChangeCompany)
+        btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterCreation)
+        btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn111=Button(Frame3,text='Hide Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowmore)
+        btn111.place(relx=0, rely=0.14, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn111['background'] = 'yellow'
+        def on_leave(e):
+            btn111['background'] = '#e6ffff'
+        btn111.bind("<Enter>", on_enter)
+        btn111.bind("<Leave>", on_leave)
+        # Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.18, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  Accounting Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.19, relheight=0.04, relwidth=0.999)
+        btn3=Button(Frame3,text='     Group',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn3.place(relx=0, rely=0.23, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     Ledger',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn4.place(relx=0, rely=0.26, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     Cost Category',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn5.place(relx=0, rely=0.29, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     Cost Centre',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn6.place(relx=0, rely=0.32, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        btn7=Button(Frame3,text='     Cost Centre Class',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn7.place(relx=0, rely=0.35, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        btn8=Button(Frame3,text='     Currency',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn8.place(relx=0, rely=0.38, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn8['background'] = 'yellow'
+        def on_leave(e):
+            btn8['background'] = '#e6ffff'
+        btn8.bind("<Enter>", on_enter)
+        btn8.bind("<Leave>", on_leave)
+        btn9=Button(Frame3,text='     Rates of Exchange',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn9.place(relx=0, rely=0.41, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn9['background'] = 'yellow'
+        def on_leave(e):
+            btn9['background'] = '#e6ffff'
+        btn9.bind("<Enter>", on_enter)
+        btn9.bind("<Leave>", on_leave)
+        btn10=Button(Frame3,text='     Budget',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn10.place(relx=0, rely=0.44, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn10['background'] = 'yellow'
+        def on_leave(e):
+            btn10['background'] = '#e6ffff'
+        btn10.bind("<Enter>", on_enter)
+        btn10.bind("<Leave>", on_leave)
+        btn11=Button(Frame3,text='     Scenario',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn11.place(relx=0, rely=0.47, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn11['background'] = 'yellow'
+        def on_leave(e):
+            btn11['background'] = '#e6ffff'
+        btn11.bind("<Enter>", on_enter)
+        btn11.bind("<Leave>", on_leave)
+        btn12=Button(Frame3,text='     Voucher Type',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn12.place(relx=0, rely=0.50, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn12['background'] = 'yellow'
+        def on_leave(e):
+            btn12['background'] = '#e6ffff'
+        btn12.bind("<Enter>", on_enter)
+        btn12.bind("<Leave>", on_leave)
+        btn13=Button(Frame3,text='     Credit Limits',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn13.place(relx=0, rely=0.53, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn13['background'] = 'yellow'
+        def on_leave(e):
+            btn13['background'] = '#e6ffff'
+        btn13.bind("<Enter>", on_enter)
+        btn13.bind("<Leave>", on_leave)
+        Label5 = Label(Frame3,text='  Inventory Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.57, relheight=0.04, relwidth=0.999)
+        btn14=Button(Frame3,text='     Stock Group',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn14.place(relx=0, rely=0.61, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn14['background'] = 'yellow'
+        def on_leave(e):
+            btn14['background'] = '#e6ffff'
+        btn14.bind("<Enter>", on_enter)
+        btn14.bind("<Leave>", on_leave)
+        btn15=Button(Frame3,text='     Stock Category',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn15.place(relx=0, rely=0.64, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn15['background'] = 'yellow'
+        def on_leave(e):
+            btn15['background'] = '#e6ffff'
+        btn15.bind("<Enter>", on_enter)
+        btn15.bind("<Leave>", on_leave)
+        btn16=Button(Frame3,text='     Stock Item',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn16.place(relx=0, rely=0.67, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn16['background'] = 'yellow'
+        def on_leave(e):
+            btn16['background'] = '#e6ffff'
+        btn16.bind("<Enter>", on_enter)
+        btn16.bind("<Leave>", on_leave)
+        btn17=Button(Frame3,text='     Unit',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn17.place(relx=0, rely=0.70, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn17['background'] = 'yellow'
+        def on_leave(e):
+            btn17['background'] = '#e6ffff'
+        btn17.bind("<Enter>", on_enter)
+        btn17.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Location',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.73,height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Price Levels',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.76, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Price List (Stock Group)',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.79, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn19=Button(Frame3,text='     Price List (Stock Category)',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn19.place(relx=0, rely=0.82, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn19['background'] = 'yellow'
+        def on_leave(e):
+            btn19['background'] = '#e6ffff'
+        btn19.bind("<Enter>", on_enter)
+        btn19.bind("<Leave>", on_leave)
+        btn20=Button(Frame3,text='Next',borderwidth="0",background="green",
+                                             foreground="white",width=78,font="-family {Segoe UI} -size 10 ",anchor="center",command=MasterShowInactivePage1)
+        btn20.place(relx=0.750, rely=0.908, height=30, relwidth=0.200)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def MasterShowInactivePage1():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  ',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.380, rely=0.03, relheight=0.150, relwidth=0.250)
+        Label5 = Label(Frame2,text='Master Creation',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.30, rely=0.27, relwidth=0.400, height=0)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.01, rely=0.35, relheight=0.25, relwidth=0.980)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=420, y=135, relheight=0.750, relwidth=.270)
+        Label5 = Label(Frame3,text='  List of Masters',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
+        btn1=Button(Frame3,text='Change Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterChangeCompany)
+        btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterCreation)
+        btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn111=Button(Frame3,text='Hide Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowmore)
+        btn111.place(relx=0, rely=0.14, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn111['background'] = 'yellow'
+        def on_leave(e):
+            btn111['background'] = '#e6ffff'
+        btn111.bind("<Enter>", on_enter)
+        btn111.bind("<Leave>", on_leave)
+        # Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.18, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  Payroll Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.19, relheight=0.04, relwidth=0.999)
+        btn3=Button(Frame3,text='     Employee Category',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn3.place(relx=0, rely=0.23, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     Employee Group',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn4.place(relx=0, rely=0.26, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     Employee',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn5.place(relx=0, rely=0.29, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     Units (Work)',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn6.place(relx=0, rely=0.32, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        btn7=Button(Frame3,text='     Attendance/Production Type',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn7.place(relx=0, rely=0.35, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        btn8=Button(Frame3,text='     Pay Heads',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn8.place(relx=0, rely=0.38, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn8['background'] = 'yellow'
+        def on_leave(e):
+            btn8['background'] = '#e6ffff'
+        btn8.bind("<Enter>", on_enter)
+        btn8.bind("<Leave>", on_leave)
+        btn9=Button(Frame3,text='     Payroll Voucher Type',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn9.place(relx=0, rely=0.41, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn9['background'] = 'yellow'
+        def on_leave(e):
+            btn9['background'] = '#e6ffff'
+        btn9.bind("<Enter>", on_enter)
+        btn9.bind("<Leave>", on_leave)
+        Label5 = Label(Frame3,text='  Statutory Masters',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.45, relheight=0.04, relwidth=0.999)
+        btn14=Button(Frame3,text='     GST Classification',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn14.place(relx=0, rely=0.49, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn14['background'] = 'yellow'
+        def on_leave(e):
+            btn14['background'] = '#e6ffff'
+        btn14.bind("<Enter>", on_enter)
+        btn14.bind("<Leave>", on_leave)
+        btn15=Button(Frame3,text='     TDS Nature of Payments',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn15.place(relx=0, rely=0.52, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn15['background'] = 'yellow'
+        def on_leave(e):
+            btn15['background'] = '#e6ffff'
+        btn15.bind("<Enter>", on_enter)
+        btn15.bind("<Leave>", on_leave)
+        btn16=Button(Frame3,text='     TCS Nature of Goods',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn16.place(relx=0, rely=0.55, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn16['background'] = 'yellow'
+        def on_leave(e):
+            btn16['background'] = '#e6ffff'
+        btn16.bind("<Enter>", on_enter)
+        btn16.bind("<Leave>", on_leave)
+        btn17=Button(Frame3,text='     VAT Classification',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn17.place(relx=0, rely=0.58, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn17['background'] = 'yellow'
+        def on_leave(e):
+            btn17['background'] = '#e6ffff'
+        btn17.bind("<Enter>", on_enter)
+        btn17.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Tax Units',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.61,height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Excise Duty Classification',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.64, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Excise Classification',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.67, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn19=Button(Frame3,text='     Excise Book',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn19.place(relx=0, rely=0.70, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn19['background'] = 'yellow'
+        def on_leave(e):
+            btn19['background'] = '#e6ffff'
+        btn19.bind("<Enter>", on_enter)
+        btn19.bind("<Leave>", on_leave)
+        btn21=Button(Frame3,text='     Service Category',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn21.place(relx=0, rely=0.73, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn21['background'] = 'yellow'
+        def on_leave(e):
+            btn21['background'] = '#e6ffff'
+        btn21.bind("<Enter>", on_enter)
+        btn21.bind("<Leave>", on_leave)
+        btn20=Button(Frame3,text='Next',borderwidth="0",background="green",
+                                             foreground="white",width=78,font="-family {Segoe UI} -size 10 ",anchor="center",command=MasterShowInactivePage2)
+        btn20.place(relx=0.750, rely=0.908, height=30, relwidth=0.200)
+        btn22=Button(Frame3,text='Previous',borderwidth="0",background="green",
+                                             foreground="white",width=78,font="-family {Segoe UI} -size 10 ",anchor="center",command=MasterShowInactivePage1)
+        btn22.place(relx=0.05, rely=0.908, height=30, relwidth=0.200)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+
+def MasterShowInactivePage2():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  ',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.380, rely=0.03, relheight=0.150, relwidth=0.250)
+        Label5 = Label(Frame2,text='Master Creation',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.30, rely=0.27, relwidth=0.400, height=0)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.01, rely=0.35, relheight=0.25, relwidth=0.980)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=420, y=135, relheight=0.750, relwidth=.270)
+        Label5 = Label(Frame3,text='  List of Masters',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.04, relwidth=0.999)
+        btn1=Button(Frame3,text='Change Company  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterChangeCompany)
+        btn1.place(relx=0, rely=0.06, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn1['background'] = 'yellow'
+        def on_leave(e):
+            btn1['background'] = '#e6ffff'
+        btn1.bind("<Enter>", on_enter)
+        btn1.bind("<Leave>", on_leave)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterCreation)
+        btn2.place(relx=0, rely=0.10, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn111=Button(Frame3,text='Hide Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowmore)
+        btn111.place(relx=0, rely=0.14, relheight=0.04, relwidth=0.999)
+        def on_enter(e):
+            btn111['background'] = 'yellow'
+        def on_leave(e):
+            btn111['background'] = '#e6ffff'
+        btn111.bind("<Enter>", on_enter)
+        btn111.bind("<Leave>", on_leave)
+        # Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.18, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  Statutory Details',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.19, relheight=0.04, relwidth=0.999)
+        btn3=Button(Frame3,text='     GST Details',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn3.place(relx=0, rely=0.23, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     TDS Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn4.place(relx=0, rely=0.26, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     TCS Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn5.place(relx=0, rely=0.29, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     VAT Registration Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn6.place(relx=0, rely=0.32, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        btn7=Button(Frame3,text='     Payroll Statutory Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn7.place(relx=0, rely=0.35, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        btn8=Button(Frame3,text='     Excise Registration Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn8.place(relx=0, rely=0.38, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn8['background'] = 'yellow'
+        def on_leave(e):
+            btn8['background'] = '#e6ffff'
+        btn8.bind("<Enter>", on_enter)
+        btn8.bind("<Leave>", on_leave)
+        btn9=Button(Frame3,text='     Service Tax Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn9.place(relx=0, rely=0.41, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn9['background'] = 'yellow'
+        def on_leave(e):
+            btn9['background'] = '#e6ffff'
+        btn9.bind("<Enter>", on_enter)
+        btn9.bind("<Leave>", on_leave)
+        btn14=Button(Frame3,text='     CENVAT Opening Balance',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn14.place(relx=0, rely=0.44, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn14['background'] = 'yellow'
+        def on_leave(e):
+            btn14['background'] = '#e6ffff'
+        btn14.bind("<Enter>", on_enter)
+        btn14.bind("<Leave>", on_leave)
+        btn15=Button(Frame3,text='     PLA Opening Balance',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn15.place(relx=0, rely=0.47, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn15['background'] = 'yellow'
+        def on_leave(e):
+            btn15['background'] = '#e6ffff'
+        btn15.bind("<Enter>", on_enter)
+        btn15.bind("<Leave>", on_leave)
+        btn16=Button(Frame3,text='     PAN/CIN Details',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn16.place(relx=0, rely=0.50, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn16['background'] = 'yellow'
+        def on_leave(e):
+            btn16['background'] = '#e6ffff'
+        btn16.bind("<Enter>", on_enter)
+        btn16.bind("<Leave>", on_leave)
+        btn17=Button(Frame3,text='     Dealer Excise Opening Stock',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn17.place(relx=0, rely=0.53, height=17, relwidth=0.999)
+        def on_enter(e):
+            btn17['background'] = 'yellow'
+        def on_leave(e):
+            btn17['background'] = '#e6ffff'
+        btn17.bind("<Enter>", on_enter)
+        btn17.bind("<Leave>", on_leave)
+        btn18=Button(Frame3,text='     Excise Opening Balance',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+        btn18.place(relx=0, rely=0.56,height=17, relwidth=0.999)
+        def on_enter(e):
+            btn18['background'] = 'yellow'
+        def on_leave(e):
+            btn18['background'] = '#e6ffff'
+        btn18.bind("<Enter>", on_enter)
+        btn18.bind("<Leave>", on_leave)
+        btn22=Button(Frame3,text='Previous',borderwidth="0",background="green",
+                                             foreground="white",width=78,font="-family {Segoe UI} -size 10 ",anchor="center",command=MasterShowInactivePage2)
+        btn22.place(relx=0.05, rely=0.908, height=30, relwidth=0.200)
         
         global Canvas3
         Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
