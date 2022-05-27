@@ -3825,7 +3825,7 @@ def AccountingMasters_Group_MoreDetails():
                                             font="-family {Segoe UI} -size 12 ",anchor="w")
         Label5.place(relx=0, rely=0, relheight=0.10, relwidth=1.000)
         btn2=Button(Frame3,text='Show More  ',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=MasterShowmore)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=AccountingMasters_Group_ShowMore)
         btn2.place(relx=0, rely=0.20, relheight=0.10, relwidth=0.999)
         def on_enter(e):
             btn2['background'] = 'yellow'
@@ -3872,6 +3872,683 @@ def AccountingMasters_Group_MoreDetails():
                         font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
         btn.place(x=200, rely=0.80, relheight=0.15, relwidth=0.20)
 
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+
+def AccountingMasters_Group_ShowMore():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='     Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.340, rely=0.03, relheight=0.150, relwidth=0.330)
+        Label5 = Label(Frame2,text='More Details',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.38, rely=0.27, relwidth=0.250, height=0)
+        Label5 = Label(Frame2,text='Under',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.37, relheight=0.15, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.37, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.37, relheight=0.20, relwidth=0.500)
+        Label5 = Label(Frame2,text='Add',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.60, relheight=0.15, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.60, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.60, relheight=0.20, relwidth=0.500)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=350, y=160, relheight=0.350, relwidth=.380)
+        Label5 = Label(Frame3,text='  List of Group Details',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.10, relwidth=1.000)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=AccountingMasters_Group_MoreDetails)
+        btn2.place(relx=0, rely=0.15, relheight=0.08, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn33=Button(Frame3,text='Show Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=AccountingMasters_Group_ShowInactive)
+        btn33.place(relx=0, rely=0.22, relheight=0.08, relwidth=0.999)
+        def on_enter(e):
+            btn33['background'] = 'yellow'
+        def on_leave(e):
+            btn33['background'] = '#e6ffff'
+        btn33.bind("<Enter>", on_enter)
+        btn33.bind("<Leave>", on_leave)
+        #Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.30, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  General Details',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.31, relheight=0.08, relwidth=0.999)
+        btn3=Button(Frame3,text='     Name and Alias                                                               Ddff',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NameAndAlias)
+        btn3.place(relx=0, rely=0.39, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn31=Button(Frame3,text='     Language Alias                                                               ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_LanguageAlias)
+        btn31.place(relx=0, rely=0.45, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn31['background'] = 'yellow'
+        def on_leave(e):
+            btn31['background'] = '#e6ffff'
+        btn31.bind("<Enter>", on_enter)
+        btn31.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     Group behaves like a Sub-ledger                                      Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_GroupBehaviour)
+        btn4.place(relx=0, rely=0.53, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     Nett Credit/Debit Balances for Reporting                           Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NettCreditdebitbalance)
+        btn5.place(relx=0, rely=0.61, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     Use for calculation                                                           Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_Calculation)
+        btn6.place(relx=0, rely=0.69, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        btn7=Button(Frame3,text='     Method of allocation in Purchase Invoice                           Not Applicable',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_MethodofAllocation)
+        btn7.place(relx=0, rely=0.77, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        # Create a Button
+        btn10 = Button(Frame3, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=200, rely=0.88, relheight=0.10, relwidth=0.20)
+
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_Group_ShowInactive():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='     Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.340, rely=0.03, relheight=0.150, relwidth=0.330)
+        Label5 = Label(Frame2,text='More Details',bd=0, width=5, background="white",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.38, rely=0.27, relwidth=0.250, height=0)
+        Label5 = Label(Frame2,text='Under',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.37, relheight=0.15, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.37, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.37, relheight=0.20, relwidth=0.500)
+        Label5 = Label(Frame2,text='Add',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.60, relheight=0.15, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.60, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.60, relheight=0.20, relwidth=0.500)
+
+        global Frame3
+        Frame3 = tk.Frame( background="#e6ffff", relief="ridge",bd=0)
+        Frame3.place(x=350, y=160, relheight=0.450, relwidth=.380)
+        Label5 = Label(Frame3,text='  List of Group Details',bd=0, width=5, background="#3385ff",
+                                            foreground="white",
+                                            font="-family {Segoe UI} -size 12 ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.08, relwidth=1.000)
+        btn2=Button(Frame3,text='Show Less  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=AccountingMasters_Group_MoreDetails)
+        btn2.place(relx=0, rely=0.13, relheight=0.08, relwidth=0.999)
+        def on_enter(e):
+            btn2['background'] = 'yellow'
+        def on_leave(e):
+            btn2['background'] = '#e6ffff'
+        btn2.bind("<Enter>", on_enter)
+        btn2.bind("<Leave>", on_leave)
+        btn33=Button(Frame3,text='Hide Inactive  ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn33.place(relx=0, rely=0.19, relheight=0.08, relwidth=0.999)
+        def on_enter(e):
+            btn33['background'] = 'yellow'
+        def on_leave(e):
+            btn33['background'] = '#e6ffff'
+        btn33.bind("<Enter>", on_enter)
+        btn33.bind("<Leave>", on_leave)
+        #Separator object
+        separator = ttk.Separator(Frame3, orient='horizontal')
+        separator.place(relx=0.01, rely=0.26, relwidth=0.980, height=0)
+        Label5 = Label(Frame3,text='  General Details',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.27, relheight=0.08, relwidth=0.999)
+        btn3=Button(Frame3,text='     Name and Alias                                                               Ddff',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NameAndAlias)
+        btn3.place(relx=0, rely=0.33, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn3['background'] = 'yellow'
+        def on_leave(e):
+            btn3['background'] = '#e6ffff'
+        btn3.bind("<Enter>", on_enter)
+        btn3.bind("<Leave>", on_leave)
+        btn31=Button(Frame3,text='     Language Alias                                                               ',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_LanguageAlias)
+        btn31.place(relx=0, rely=0.39, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn31['background'] = 'yellow'
+        def on_leave(e):
+            btn31['background'] = '#e6ffff'
+        btn31.bind("<Enter>", on_enter)
+        btn31.bind("<Leave>", on_leave)
+        btn4=Button(Frame3,text='     Group behaves like a Sub-ledger                                      Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_GroupBehaviour)
+        btn4.place(relx=0, rely=0.45, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn4['background'] = 'yellow'
+        def on_leave(e):
+            btn4['background'] = '#e6ffff'
+        btn4.bind("<Enter>", on_enter)
+        btn4.bind("<Leave>", on_leave)
+        btn5=Button(Frame3,text='     Nett Credit/Debit Balances for Reporting                           Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NettCreditdebitbalance)
+        btn5.place(relx=0, rely=0.51, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn5['background'] = 'yellow'
+        def on_leave(e):
+            btn5['background'] = '#e6ffff'
+        btn5.bind("<Enter>", on_enter)
+        btn5.bind("<Leave>", on_leave)
+        btn6=Button(Frame3,text='     Use for calculation                                                           Yes',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_Calculation)
+        btn6.place(relx=0, rely=0.57, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn6['background'] = 'yellow'
+        def on_leave(e):
+            btn6['background'] = '#e6ffff'
+        btn6.bind("<Enter>", on_enter)
+        btn6.bind("<Leave>", on_leave)
+        btn7=Button(Frame3,text='     Method of allocation in Purchase Invoice                           Not Applicable',borderwidth="0",background="#e6ffff",
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_MethodofAllocation)
+        btn7.place(relx=0, rely=0.62, relheight=0.10, relwidth=0.999)
+        def on_enter(e):
+            btn7['background'] = 'yellow'
+        def on_leave(e):
+            btn7['background'] = '#e6ffff'
+        btn7.bind("<Enter>", on_enter)
+        btn7.bind("<Leave>", on_leave)
+        Label5 = Label(Frame3,text='  Statutory Details',bd=0, width=5, background="#e6ffff",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
+        Label5.place(relx=0, rely=0.70, relheight=0.06, relwidth=0.999)
+        btn8=Button(Frame3,text='     TDS Details',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_TDSDetails)
+        btn8.place(relx=0, rely=0.76, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn8['background'] = 'yellow'
+        def on_leave(e):
+            btn8['background'] = '#e6ffff'
+        btn8.bind("<Enter>", on_enter)
+        btn8.bind("<Leave>", on_leave)
+        btn9=Button(Frame3,text='     TDS Details (History)',borderwidth="0",background="#e6ffff",
+                                             foreground="#808080",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_TDSDetails)
+        btn9.place(relx=0, rely=0.82, relheight=0.06, relwidth=0.999)
+        def on_enter(e):
+            btn9['background'] = 'yellow'
+        def on_leave(e):
+            btn9['background'] = '#e6ffff'
+        btn9.bind("<Enter>", on_enter)
+        btn9.bind("<Leave>", on_leave)
+        # # Create a Button
+        btn10 = Button(Frame3, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=200, rely=0.89, relheight=0.08, relwidth=0.20)
+
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_Group_NameAndAlias():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.370, rely=0.400, relheight=0.220, relwidth=0.290)
+        Label5 = Label(Frame2,text='Name and Alias',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.10, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.33, rely=0.26, relwidth=0.340, height=0)
+        Label5 = Label(Frame2,text='Name',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.37, relheight=0.08, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.36, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.37, relheight=0.15, relwidth=0.600)
+        Label5 = Label(Frame2,text='(alias)',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Helvetica} -size 11 -slant italic ")
+        Label5.place(relx=0.03, rely=0.55, relheight=0.08, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.54, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.55, relheight=0.15, relwidth=0.600)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=150, rely=0.75, relheight=0.15, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_Group_LanguageAlias():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.370, rely=0.400, relheight=0.300, relwidth=0.290)
+        Label5 = Label(Frame2,text='Language Alias',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.07, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.33, rely=0.20, relwidth=0.340, height=0)
+        Label5 = Label(Frame2,text='English',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.27, relheight=0.08, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.24, relheight=0.15, relwidth=0.05)
+        Label5 = Label(Frame2,text='Name',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.10, rely=0.38, relheight=0.08, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.35, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.36, relheight=0.10, relwidth=0.600)
+        Label5 = Label(Frame2,text='(alias)',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Helvetica} -size 11 -slant italic ")
+        Label5.place(relx=0.10, rely=0.49, relheight=0.08, relwidth=0.200)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.300, rely=0.46, relheight=0.15, relwidth=0.05)
+        Entry1 = Entry(Frame2,width=60,borderwidth="3")
+        Entry1.place(relx=0.350, rely=0.48, relheight=0.10, relwidth=0.600)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=140, rely=0.70, relheight=0.15, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_Group_GroupBehaviour():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.350, rely=0.400, relheight=0.200, relwidth=0.290)
+        Label5 = Label(Frame2,text='Group Behaviour',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.25, rely=0.07, relheight=0.15, relwidth=0.500)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.33, rely=0.20, relwidth=0.340, height=0)
+        Label5 = Label(Frame2,text='Group behaves like a sub-ledger',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.33, relheight=0.15, relwidth=0.600)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.650, rely=0.31, relheight=0.15, relwidth=0.05)
+        combo = ttk.Combobox(Frame2,values=["Yes", "No"])
+        combo.place(relx=0.730, rely=0.32, relheight=0.13, relwidth=0.230)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=140, rely=0.65, relheight=0.20, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+def AccountingMasters_Group_NettCreditdebitbalance():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.350, rely=0.400, relheight=0.200, relwidth=0.290)
+        Label5 = Label(Frame2,text='Nett Credit/Debit Balances',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.15, rely=0.07, relheight=0.15, relwidth=0.700)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.20, rely=0.22, relwidth=0.595, height=0)
+        Label5 = Label(Frame2,text='Nett Debit/Credit Balances for Reporting',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.33, relheight=0.15, relwidth=0.680)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.720, rely=0.32, relheight=0.15, relwidth=0.05)
+        combo = ttk.Combobox(Frame2,values=["Yes", "No"])
+        combo.place(relx=0.750, rely=0.32, relheight=0.13, relwidth=0.230)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=140, rely=0.65, relheight=0.20, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_Group_Calculation():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.300, rely=0.400, relheight=0.200, relwidth=0.400)
+        Label5 = Label(Frame2,text='Calculation',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.30, rely=0.07, relheight=0.15, relwidth=0.400)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.41, rely=0.22, relwidth=0.190, height=0)
+        Label5 = Label(Frame2,text='Used for calculation (for example: taxes, discounts)',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.33, relheight=0.15, relwidth=0.680)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.700, rely=0.32, relheight=0.15, relwidth=0.05)
+        combo = ttk.Combobox(Frame2,values=["Yes", "No"])
+        combo.place(relx=0.730, rely=0.32, relheight=0.13, relwidth=0.230)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=195, rely=0.65, relheight=0.20, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_MethodofAllocation():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  Group Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowMore)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.250, rely=0.400, relheight=0.200, relwidth=0.500)
+        Label5 = Label(Frame2,text='Method of Allocation',bd=0, width=5, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12 -weight bold ",anchor="center")
+        Label5.place(relx=0.30, rely=0.07, relheight=0.15, relwidth=0.400)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.36, rely=0.22, relwidth=0.275, height=0)
+        Label5 = Label(Frame2,text='Method to allocate when used in purchase invoice',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.03, rely=0.33, relheight=0.15, relwidth=0.680)
+        Label5 = Label(Frame2,text=':',bd=0, width=5, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10 ")
+        Label5.place(relx=0.600, rely=0.32, relheight=0.15, relwidth=0.05)
+        combo = ttk.Combobox(Frame2,values=["Not Applicable", "Appropriate by Qty", "Appropriate by Value"])
+        combo.place(relx=0.640, rely=0.32, relheight=0.15, relwidth=0.330)
+        # # Create a Button
+        btn10 = Button(Frame2, text = 'Save', bd = '2',background="green",
+                        font="-family {Segoe UI} -size 12  ",foreground="white",command=CompanyFeaturesAlteration)
+        btn10.place(x=195, rely=0.65, relheight=0.20, relwidth=0.20)
+        
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+
+
+def AccountingMasters_TDSDetails():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.890, relwidth=.880)
+        Label5 = Label(Frame1,text='  MoreDetails TDSDetails',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X   ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e",command=AccountingMasters_Group_ShowInactive)
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="#ffffff",relief="ridge")
+        Frame2.place(relx=0.370, rely=0.400, relheight=0.220, relwidth=0.290)
+        Label6 = Label(Frame2,text='You need to enable the TDS feature \n for your Company.',
+                       borderwidth="0", width=20, background="white",foreground="black",font="-family {Arial UI} -size 10",anchor="w")
+        Label6.place(relx=0.20, rely=0.07, relheight=0.40, relwidth=0.950)
+        Label6 = Label(Frame2,text='Enable now?',
+                       borderwidth="0", width=20, background="white",foreground="black",font="-family {Arial UI} -size 10",anchor="w")
+        Label6.place(relx=0.40, rely=0.50, relheight=0.10, relwidth=0.950)
+        btn = Button(Frame2, text = 'Yes', bd = '2',background="white",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="blue",anchor="w")
+        btn.place(relx=0.37, rely=0.750, relheight=0.15, relwidth=0.10)
+        Label6 = Label(Frame2,text='or',borderwidth="0", width=20, background="white",
+                                             foreground="black",font="-family {Arial UI} -size 10",anchor="center")
+        Label6.place(relx=0.47, rely=0.750, relheight=0.15, relwidth=0.10)
+        btn = Button(Frame2, text = 'No', bd = '2',background="white",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="blue",anchor="w")
+        btn.place(relx=0.57, rely=0.750, relheight=0.15, relwidth=0.10)
+        
         global Canvas3
         Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
         Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
