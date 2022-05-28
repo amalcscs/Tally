@@ -2497,7 +2497,7 @@ def MasterCreation():
         btn3.bind("<Enter>", on_enter)
         btn3.bind("<Leave>", on_leave)
         btn4=Button(Frame3,text='     Ledger',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Ledger)
         btn4.place(relx=0, rely=0.25, relheight=0.04, relwidth=0.999)
         def on_enter(e):
             btn4['background'] = 'yellow'
@@ -3574,6 +3574,7 @@ def MasterShowInactivePage2():
         Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
         Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
 
+# Master Creation group
 
 def AccountingMasters_Group():
     
@@ -3841,7 +3842,7 @@ def AccountingMasters_Group_MoreDetails():
                                             font="-family {Segoe UI} -size 10 -weight bold",anchor="w")
         Label5.place(relx=0, rely=0.35, relheight=0.08, relwidth=0.999)
         btn3=Button(Frame3,text='     Name and Alias                                                               Ddff',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NameAndAlias)
         btn3.place(relx=0, rely=0.45, relheight=0.06, relwidth=0.999)
         def on_enter(e):
             btn3['background'] = 'yellow'
@@ -3850,7 +3851,7 @@ def AccountingMasters_Group_MoreDetails():
         btn3.bind("<Enter>", on_enter)
         btn3.bind("<Leave>", on_leave)
         btn4=Button(Frame3,text='     Group behaves like a Sub-ledger                                      Yes',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_GroupBehaviour)
         btn4.place(relx=0, rely=0.53, relheight=0.10, relwidth=0.999)
         def on_enter(e):
             btn4['background'] = 'yellow'
@@ -3859,7 +3860,7 @@ def AccountingMasters_Group_MoreDetails():
         btn4.bind("<Enter>", on_enter)
         btn4.bind("<Leave>", on_leave)
         btn5=Button(Frame3,text='     Nett Credit/Debit Balances for Reporting                           Yes',borderwidth="0",background="#e6ffff",
-                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=ShutCompanyChangeCompany)
+                                             foreground="black",width=78,font="-family {Segoe UI} -size 10 ",anchor="w",command=AccountingMasters_Group_NettCreditdebitbalance)
         btn5.place(relx=0, rely=0.65, relheight=0.10, relwidth=0.999)
         def on_enter(e):
             btn5['background'] = 'yellow'
@@ -4553,7 +4554,379 @@ def AccountingMasters_TDSDetails():
         Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
         Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
 
+# Master Creation Ledger
 
+def AccountingMasters_Ledger():
+    
+        global Frame1
+        Frame1 = tk.Frame( background="#B0B0B0", relief="ridge",bd=0)
+        Frame1.place(relx=0, rely=0.07, relheight=0.950, relwidth=.880)
+        Label5 = Label(Frame1,text='   Ledger Creation',borderwidth="0", width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="w")
+        Label5.place(relx=0, rely=0, relheight=0.03, relwidth=0.250)
+        Label5 = Label(Frame1,text='Abc',bd=0, width=5, background="#3385ff",
+                                            foreground="#00254a",
+                                            font="-family {Segoe UI} -size 10 -weight bold ",anchor="center")
+        Label5.place(relx=0.20, rely=0, relheight=0.03, relwidth=0.600)
+        # Create a Button
+        btn = Button(Frame1, text = 'X      ', bd = '2',background="#3385ff",borderwidth="0",
+                       font="-family {Segoe UI} -size 12  ",foreground="#00254a",anchor="e")
+        btn.place(x=900, rely=0, relheight=0.03, relwidth=0.250)
+
+        global Frame2
+        Frame2 = tk.Frame(Frame1, background="white",bd=0,relief="ridge")
+        Frame2.place(relx=0, rely=0.030, relheight=0.900, relwidth=0.900)
+        Label13 = Label(Frame2,text='Name',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Segoe UI} -size 10  ")
+        Label13.place(relx=0.01, rely=0, relheight=0.06, relwidth=0.100)
+        Label14 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(relx=0.08, rely=0, relheight=0.06, relwidth=0.05)
+        Entry2 = Entry(Frame2,width=60,borderwidth="3")
+        Entry2.place(x=130, rely=0.01, relheight=0.04, relwidth=0.250)
+        Label15 = Label(Frame2,text='(alias)',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Helvetica} -size 11 -slant italic ")
+        Label15.place(relx=0.01, rely=0.04, relheight=0.06, relwidth=0.100)
+        Label14 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(relx=0.08, rely=0.04, relheight=0.06, relwidth=0.05)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='vertical')
+        separator.place(relx=0.815, rely=0, relwidth=0, relheight=0.180)
+        Label13 = Label(Frame2,text='Total Opening Balance',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.830, rely=0, relheight=0.03, relwidth=0.200)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.835, rely=0.03, relwidth=0.130, relheight=0)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0, rely=0.180, relwidth=1.000, relheight=0)
+        Label13 = Label(Frame2,text='Under',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.01, rely=0.200, relheight=0.03, relwidth=0.100)
+        Label14 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(relx=0.20, rely=0.192, relheight=0.04, relwidth=0.05)
+        Label13 = Label(Frame2,text='Captial Account',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.250, rely=0.200, relheight=0.03, relwidth=0.100)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='vertical')
+        separator.place(relx=0.500, rely=0.180, relwidth=0, relheight=0.850)
+        Label13 = Label(Frame2,text='Mailing Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.510, rely=0.190, relheight=0.03, relwidth=0.100)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.500, rely=0.220, relwidth=0.100, relheight=0)
+        Label13 = Label(Frame2,text='Name',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.230, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.230, relheight=0.04, relwidth=0.5)
+        Label13 = Label(Frame2,text='Address',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.260, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.260, relheight=0.04, relwidth=0.5)
+        Label13 = Label(Frame2,text='State',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.350, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.350, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='Kerala',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.710, rely=0.350, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text='Country',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.380, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.380, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='India',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.710, rely=0.380, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text='Pincode',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.410, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.410, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='Banking Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.510, rely=0.490, relheight=0.03, relwidth=0.100)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.500, rely=0.520, relwidth=0.105, relheight=0)
+        Label13 = Label(Frame2,text='Provide bank details',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.530, relheight=0.03, relwidth=0.250)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.530, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='No',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.710, rely=0.530, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text='Tax Registration Details',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.510, rely=0.570, relheight=0.03, relwidth=0.100)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0.500, rely=0.600, relwidth=0.110, relheight=0)
+        Label13 = Label(Frame2,text='PAN/IT No.',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.610, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.610, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='Registration type',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.510, rely=0.640, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.640, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='GSTIN/UIN',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.530, rely=0.670, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.670, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='Set/Alter GST details',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.530, rely=0.670, relheight=0.03, relwidth=0.150)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10")
+        Label13.place(relx=0.700, rely=0.670, relheight=0.03, relwidth=0.5)
+        Label13 = Label(Frame2,text='No',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.710, rely=0.670, relheight=0.03, relwidth=0.100)
+        # Separator object
+        separator = ttk.Separator(Frame2, orient='horizontal')
+        separator.place(relx=0, rely=0.920, relwidth=1.000, relheight=0)
+        Label13 = Label(Frame2,text='Opening Balance',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.370, rely=0.940, relheight=0.03, relwidth=0.130)
+        Label13 = Label(Frame2,text='( on 1-Apr-22)',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.520, rely=0.940, relheight=0.03, relwidth=0.100)
+        Label13 = Label(Frame2,text=':',borderwidth="0", width=8, background="white",
+                                            foreground="black",anchor="w",
+                                            font="-family {Arial UI} -size 10 -weight bold")
+        Label13.place(relx=0.600, rely=0.935, relheight=0.04, relwidth=0.05)
+        
+        global Frame5
+        Frame5 = tk.Frame(Frame1,background="#e6ffff",relief="ridge")
+        Frame5.place(relx=0, rely=0.930, relheight=0.10, relwidth=1.000)
+        Label14 = Label(Frame5,text='Q:Quit',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=10, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='^',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=105, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=125, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=220, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=240, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=335, y=5, height=23, width=15)
+        btn11 = Button(Frame5, text = 'A: Accept', bd = '0',background="white",
+                        font="-family {Arial UI} -size 10  ",foreground="black",anchor="w", command=ChangeCompany)
+        btn11.place(x=355, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=450, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=470, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=565, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=585, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=680, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='D:Delete',borderwidth="0", width=8, background="white",
+                                            foreground="#808080",
+                                            font="-family {Arial UI} -size 10  ",anchor="w")
+        Label14.place(x=700, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='^',borderwidth="0", width=8, background="white",
+                                            foreground="#808080",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=795, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=815, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=910, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=930, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=1025, y=5, height=23, width=15)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=1045, y=5, height=23, width=90)
+        Label14 = Label(Frame5,text='',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=1140, y=5, height=23, width=15)
+
+        global Canvas3
+        Canvas3 = tk.Canvas(background="#e6ffff", insertbackground="black", relief="ridge",selectbackground="blue", selectforeground="white")
+        Canvas3.place(relx=0.880, rely=0.07, relheight=0.82, relwidth=0.130)
+        Label14 = Label(Canvas3,text='F2:Period',borderwidth="0", width=8, background="white",
+                                            foreground="#808080",
+                                            font="-family {Arial UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=5, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=5, height=30, width=20)
+        btn1 = Button(Canvas3, text = 'F3: Company', bd = '0',background="white",
+                        font="-family {Arial UI} -size 10  ",foreground="black",anchor="w", command=ChangeCompany)
+        btn1.place(x=5, y=40, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=40, height=30, width=20)
+        Label14 = Label(Canvas3,text='F4:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=100, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=100, height=30, width=20)
+        Label14 = Label(Canvas3,text='F5:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=135, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=135, height=30, width=20)
+        Label14 = Label(Canvas3,text='F6:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=170, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=170, height=30, width=20)
+        Label14 = Label(Canvas3,text='F7:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=205, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=205, height=30, width=20)
+        Label14 = Label(Canvas3,text='F8:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=240, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=240, height=30, width=20)
+        Label14 = Label(Canvas3,text='F9:',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 10  ",anchor="w")
+        Label14.place(x=5, y=275, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=275, height=30, width=20)
+        btn2 = Button(Canvas3, text = 'F10: Other Masters', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w", command=MasterCreation)
+        btn2.place(x=5, y=310, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=310, height=30, width=20)
+        btn3 = Button(Canvas3, text = 'I: More Details', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w", command=AccountingMasters_Group_MoreDetails)
+        btn3.place(x=5, y=345, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=345, height=30, width=20)
+        # Create a Button
+        btn = Button(Canvas3, text = 'F12: Configure', bd = '0',background="white",
+                        font="-family {Segoe UI} -size 10  ",foreground="black",anchor="w", command=Configure)
+        btn.place(x=5, y=580, height=30, width=120)
+        Label14 = Label(Canvas3,text='<',borderwidth="0", width=8, background="white",
+                                            foreground="black",
+                                            font="-family {Segoe UI} -size 12  ")
+        Label14.place(x=130, y=580, height=30, width=20)
 
 global screen
 screen=Tk()
